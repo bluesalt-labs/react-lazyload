@@ -1,7 +1,7 @@
 /**
  * react-lazyload
  */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { on, off } from './utils/event';
 import scrollParent from './utils/scrollParent';
@@ -337,7 +337,7 @@ class LazyLoad extends Component {
     } = this.props;
 
     return (
-      <span className={`${classNamePrefix}-wrapper`} ref={this.setRef}>
+      <Fragment className={`${classNamePrefix}-wrapper`} ref={this.setRef}>
         {this.visible ? (
           children
         ) : placeholder ? (
@@ -348,7 +348,7 @@ class LazyLoad extends Component {
             className={`${classNamePrefix}-placeholder`}
           />
         )}
-      </span>
+      </Fragment>
     );
   }
 }
